@@ -87,6 +87,9 @@ print out the output.
 It also works with indentation when using C<eindent> and C<eoutdent> from
 L<Term::GentooFunctions>.
 
+If you have L<Unicode::UTF8> available, it will use that to support UTF-8
+character encodings. (This is much faster than L<Encode>.)
+
 One limitation this has is that there are only three colors, which means
 that you cannot see a difference between levels C<debug>, C<notice>, and
 C<info> which all have a green color, or between C<error>, C<critical>,
@@ -101,5 +104,7 @@ At least for now.
 =item * L<Log::Dispatch::Screen::Color>
 
 Colors entire lines, not just the beginning. Try it out.
+
+=item * L<Unicode::UTF8>
 
 =back
