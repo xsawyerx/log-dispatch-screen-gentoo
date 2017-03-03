@@ -6,6 +6,46 @@ Log::Dispatch::Screen::Gentoo - Gentoo-colored screen logging output
 
 version 0.001
 
+# SYNOPSIS
+
+    use Log::Dispatch;
+
+    my $log = Log::Dispatch->new(
+        'outputs' => [
+            [
+                'Screen::Gentoo',
+                'min_level' => 'debug',
+                'stderr'    => 1,
+                'newline'   => 1,
+            ],
+        ],
+    );
+
+    $log->info('Information');
+    $log->warning('Uh oh!');
+    $log->critical('No oh!');
+
+# DESCRIPTION
+
+This implements a colorful output that uses [Term::GentooFunctions](https://metacpan.org/pod/Term::GentooFunctions) to
+print out the output.
+
+It also works with indentation when using `eindent` and `eoutdent` from
+[Term::GentooFunctions](https://metacpan.org/pod/Term::GentooFunctions).
+
+One limitation this has is that there are only three colors, which means
+that you cannot see a difference between levels `debug`, `notice`, and
+`info` which all have a green color, or between `error`, `critical`,
+`alert`, and `emergency` which all have a red color.
+
+At least for now.
+
+# SEE ALSO
+
+- [Log::Dispatch::Screen::Color](https://metacpan.org/pod/Log::Dispatch::Screen::Color)
+
+    Colors entire lines, not just the beginning. Try it out.
+
 # AUTHOR
 
 Sawyer X <xsawyerx@cpan.org>
