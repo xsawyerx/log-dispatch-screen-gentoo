@@ -17,11 +17,6 @@ my $log = Log::Dispatch->new(
     ],
 );
 
-sub run_test {
-    my ( $log_cb, $type ) = @_;
-    my $stdout = capture_stdout { $log_cb->() };
-}
-
 sub info_msg {
     return ' ' . BOLD() . GREEN() . '*' . RESET() . ' ' . $_[0] . "\n";
 }
