@@ -55,3 +55,51 @@ sub log_message {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 SYNOPSIS
+
+    use Log::Dispatch;
+
+    my $log = Log::Dispatch->new(
+        'outputs' => [
+            [
+                'Screen::Gentoo',
+                'min_level' => 'debug',
+                'stderr'    => 1,
+                'newline'   => 1,
+            ],
+        ],
+    );
+
+    $log->info('Information');
+    $log->warning('Uh oh!');
+    $log->critical('No oh!');
+
+=head1 DESCRIPTION
+
+This implements a colorful output that uses L<Term::GentooFunctions> to
+print out the output.
+
+It also works with indentation when using C<eindent> and C<eoutdent> from
+L<Term::GentooFunctions>.
+
+One limitation this has is that there are only three colors, which means
+that you cannot see a difference between levels C<debug>, C<notice>, and
+C<info> which all have a green color, or between C<error>, C<critical>,
+C<alert>, and C<emergency> which all have a red color.
+
+At least for now.
+
+=head1 SEE ALSO
+
+=over 4
+
+=item * L<Log::Dispatch::Screen::Color>
+
+Colors entire lines, not just the beginning. Try it out.
+
+=back
