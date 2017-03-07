@@ -10,7 +10,7 @@ use Term::GentooFunctions ':all';
 
 ## no critic qw(Modules::RequireExplicitInclusion)
 my $encode
-    = require_module('Unicode::UTF8')
+    = eval { require Unicode::UTF8; 1; }
     ? sub { Unicode::UTF8::encode_utf8( $_[0] ) }
     : sub { Encode::encode_utf8( $_[0] ) };
 
