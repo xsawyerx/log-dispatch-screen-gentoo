@@ -41,7 +41,7 @@ sub log_message {
     my $message
         = $self->{'utf8'}
         ? $encode->( $p{'message'} )
-        : $encode->( $p{'message'} );
+        : $p{'message'};
 
     my $print_func = $FUNCTION_MAP{$level} //= $FUNCTION_MAP{''};
 
