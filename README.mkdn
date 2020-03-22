@@ -4,7 +4,7 @@ Log::Dispatch::Screen::Gentoo - Gentoo-colored screen logging output
 
 # VERSION
 
-version 0.002
+version 0.003
 
 # SYNOPSIS
 
@@ -57,7 +57,7 @@ Sawyer X <xsawyerx@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2017 by Sawyer X.
+This software is Copyright (c) 2020 by Sawyer X.
 
 This is free software, licensed under:
 
